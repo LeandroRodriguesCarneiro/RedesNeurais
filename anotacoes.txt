@@ -1,0 +1,56 @@
+As redes neurais perceptron não consegue resolver problemas não linearmente separaveis. exemplo o XOR
+
+Bias e um valor novo adicionado juntamente com um peso novo
+
+
+MAE = 1/n somtorio |entrada - calculado|
+	- O MAE é a média das diferenças absolutas entre os valores observados e os valores previstos.
+	Ele é menos sensível a valores discrepantes (outliers) do que o MSE, porque não envolve o cálculo 
+	dos quadrados das diferenças.
+
+	- O MAE é adequado para situações em que as diferenças entre os valores observados e previstos são 
+	distribuídas de forma irregular e não se deseja penalizar grandes erros mais do que pequenos.
+
+	- No entanto, como não envolve o cálculo dos quadrados das diferenças, pode ser menos sensível a 
+	diferenças significativas em casos onde os erros são grandes.
+
+
+MSE  = 1/n somatorio (entrada - calculado)^2 
+	- O MSE é a média dos quadrados das diferenças entre os valores observados e os valores previstos.
+	- Ele penaliza grandes erros mais do que pequenos erros devido à sua natureza quadrática.
+
+	- O MSE é útil para casos onde queremos penalizar erros grandes de forma mais significativa, 
+	como em problemas onde é importante minimizar erros grandes.
+
+	- No entanto, como envolve o cálculo dos quadrados das diferenças, ele pode ser mais sensível a 
+	valores discrepantes.
+
+RMSE = sqrt(1/n somatorio (entrada - calculado)^2) 
+	- O RMSE é a raiz quadrada do MSE.
+	- Ele fornece uma medida do erro médio na mesma unidade que os valores de destino, facilitando a 
+	compreensão do erro em termos do domínio do problema.
+	- O RMSE é uma métrica comumente usada em problemas de previsão, especialmente quando é importante 
+	ter uma noção intuitiva da magnitude do erro em relação às unidades dos valores de destino
+
+Como decidir o numero de neuronios das camadas ocultas
+neuronios = (Entradas + Saídas)/2 obs: arredonde sempre para cima. Para desenho inicial mas recomenda-se 
+					utilizar outos metodos ou por observação
+
+Cross Validation
+Aprendizagem de maquina automatica
+Em geral, duas camadas funcionam bem para poucos dados 
+
+Encode para camada de saida de forma a aproximar os registros a zero e um 
+
+Diferentes tipos de gradient Descent:
+Batch Gradient Descent:
+	- Calcula o erro para todos os registros e depois ajusta os pesos
+
+Mini Batch Gradient Descent: 
+	- Escolhe um número de registros para rodar e atulizar pesos
+
+Stochastic Gradient Descent:
+	- Calcula o erro e ajusta os pesos
+	- Ajuda a prevenir mínimo locias supericies não convexas
+	- Mais rapido (não necessario carregar todos os dados em memória)
+
